@@ -25,6 +25,9 @@ app.use((req,res, next)=>{
   next();
 });
 
+app.get("/", (req, res, next) => {
+  res.send("API is working");
+});
 app.get("/customers", customerCtrl.getCustomers);
 app.get("/customer/:customerId", customerCtrl.getCustomerDetails);
 app.post("/customer/:customerId", customerCtrl.updateCustomerDetails);
