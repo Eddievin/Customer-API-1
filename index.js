@@ -26,7 +26,7 @@ app.use((req,res, next)=>{
 });
 
 app.get("/", (req, res, next) => {
-  res.send("API is working properly");
+  res.send("API is working properly now");
 });
 app.get("/customers", customerCtrl.getCustomers);
 app.get("/customer/:customerId", customerCtrl.getCustomerDetails);
