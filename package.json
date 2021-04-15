@@ -15,6 +15,6 @@
     "start": "node index",
     "dev": "nodemon index"
   },
-  "author": "Paul Obunga",
+  "author": "Eddie Thokerunga",
   "license": "ISC"
 }
