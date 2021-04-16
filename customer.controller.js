@@ -3,13 +3,13 @@ const Customer = require("./customer.model");
 module.exports = {
   getCustomers: async (req, res, next) => {
     let customers = await Customer.find({});
-    return res.json({ customers });
+    return res.json({ status: "SUCCESS", customers });
   },
 
   getCustomerDetails: async (req, res, next) => {
     let { customerId } = req.params;
     let customer = await Customer.findById(customerId);
-    return res.json({ customer });
+    return res.json({ status: "SUCCESS", customer });
   },
 
   updateCustomerDetails: async (req, res, next) => {
@@ -28,7 +28,10 @@ module.exports = {
       });
     }
 
-    return res.json({ message: "Customer data not updated " });
+    return res.json({
+      status: "SUCCESS",
+      message: "Customer data not updated ",
+    });
   },
 
   createCustomer: async (req, res, next) => {
@@ -47,6 +50,9 @@ module.exports = {
       });
     }
 
-    return res.json({ message: "Customer data successfully saved" });
+    return res.json({
+      status: "SUCCESS",
+      message: "Customer data successfully saved",
+    });
   },
 };

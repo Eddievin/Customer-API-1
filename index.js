@@ -16,7 +16,7 @@ mongoose.connect(DB, {
 const customerCtrl = require("./customer.controller");
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req,res, next)=>{
   res.setHeader('Access-Control-Allow-Origin',"*");
